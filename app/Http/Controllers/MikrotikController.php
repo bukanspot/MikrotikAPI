@@ -10,12 +10,12 @@ class MikrotikController extends Controller
 {
     public function index(){
         $client = new Client([
-            'host' => '10.0.0.1',
-            'user' => 'indra',
-            'pass' => 'W'
+            'host' => '192.168.88.1',
+            'user' => 'admin',
+            'pass' => null
         ]);
 
-        $query = (new Query('/ppp/active/print'));  
+        $query = (new Query('/address/address/print'));
 
         // Send query and read response from RouterOS
         $response = $client->query($query)->read();
