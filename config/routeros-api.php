@@ -14,9 +14,9 @@ return [
      |
      */
 
-    'host'     => '192.168.88.1', // Address of Mikrotik RouterOS
-    'user'     => 'admin',        // Username
-    'pass'     => null,           // Password
+    'host'     => '10.0.0.1', // Address of Mikrotik RouterOS
+    'user'     => 'indra',        // Username
+    'pass'     => 'W',           // Password
     'port'     => 8728,           // RouterOS API port number for access (if not set use default or default with SSL if SSL enabled)
     'ssh_port' => 22,             // Number of SSH port
 
