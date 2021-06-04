@@ -10,12 +10,12 @@ class MikrotikController extends Controller
 {
     public function index(){
         $client = new Client([
-            'host' => '192.168.88.1',
-            'user' => 'admin',
-            'pass' => null
+            'host' => env("MIKROTIK_HOST"),
+            'user' => env("Mikrotik_USER"),
+            'pass' => env("MIKROTIK_PASS")
         ]);
 
-        $query = (new Query('/address/address/print'));
+        $query = (new Query('/ip/address/print'));
 
         // Send query and read response from RouterOS
         $response = $client->query($query)->read();
