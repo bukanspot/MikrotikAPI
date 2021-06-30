@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use \RouterOS\Client;
 use \RouterOS\Query;
 
@@ -16,10 +17,15 @@ class MikrotikController extends Controller
         ]);
 
         $query = (new Query('/ip/address/print'));
-
+        
+        $code = Str::random(5);
+        echo $code;
+        $code = Str::lower($code);
+        // strtolower($code);
+        // $code = rand(1,100);
+        dd($code);
         // Send query and read response from RouterOS
         $response = $client->query($query)->read();
         
-        dd($response);
     }
 }
